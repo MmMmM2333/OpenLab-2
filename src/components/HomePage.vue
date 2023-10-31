@@ -1,8 +1,9 @@
 <template>
-    <div>
+    <div class="dark:bg-gray-700 min-h-screen">
         <NavBar />
-        <div>Home</div>
-        <RankTable />
+        <div class="mt-20 flex">
+            <div class="m-auto"><RankTable /></div>
+        </div>
     </div>
 </template>
 
