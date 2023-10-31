@@ -4,15 +4,15 @@
             class="w-screen h-screen flex justify-center items-center bg-light-login-bg dark:bg-night-login-bg bg-cover bg-center"
         >
             <div
-                class="bg-slate-400/30 w-2/3 max-w-[800px] min-w-[400px] h-96 flex backdrop-blur-sm rounded-3xl overflow-hidden"
+                class="bg-slate-400/30 w-2/3 max-w-[800px] min-w-[550px] h-96 flex backdrop-blur-sm rounded-3xl overflow-hidden"
             >
                 <div class="flex-1 p-6 flex justify-center items-center">
-                    <div class="flex flex-col items-center">
+                    <div class="w-full flex flex-col items-center">
                         <div class="text-center font-extrabold text-3xl select-none dark:text-white">登录</div>
-                        <div class="mt-8">
+                        <div class="w-full mt-8 px-6">
                             <input type="text" placeholder="学号" class="w-full h-10 px-2 rounded-lg" />
                         </div>
-                        <div class="my-4">
+                        <div class="w-full my-4 px-6">
                             <input type="password" placeholder="密码" class="w-full h-10 px-2 rounded-lg" />
                         </div>
                         <div class="text-center mb-4 selection: hover:cursor-pointer hover:opacity-60 dark:text-white">
