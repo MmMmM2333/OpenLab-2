@@ -11,3 +11,15 @@
     -moz-osx-font-smoothing: grayscale;
 }
 </style>
+
+<script>
+export default {
+    name: "App",
+    created() {
+        let token = localStorage.getItem("token");
+        if (token != "") {
+            this.$store.commit("saveToken", token);
+        }
+    },
+};
+</script>

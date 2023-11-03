@@ -1,22 +1,28 @@
 <template>
-    <div class="dark:bg-gray-700 min-h-screen overflow-x-hidden">
-        <!-- 导航栏 -->
-        <NavBar />
-        <!-- 欢迎信息 -->
-        <div class="mt-10 ml-10 select-none dark:text-white">
-            <div class="text-6xl mb-1">欢迎回来，{{ this.user.UserName }}</div>
-            <div class="text-xl mb-1">你现在的排名是：{{ this.user.UserRank }}</div>
-            <div class="text-xl mb-1">{{ this.displayedMessages }}</div>
-        </div>
-        <!-- 排行榜 -->
-        <div class="mb-10 w-screen max-w-[screen]">
-            <div class="mt-20 flex mx-10">
-                <div class="m-auto max-w-full max-h-[90vh] overflow-scroll border-2 dark:border-zinc-700">
-                    <RankTable />
-                </div>
-            </div>
-        </div>
+  <div class="dark:bg-gray-700 min-h-screen overflow-x-hidden">
+    <!-- 导航栏 -->
+    <NavBar />
+    <!-- 欢迎信息 -->
+    <div class="mt-10 ml-10 select-none dark:text-white">
+      <div class="text-6xl mb-1">
+        欢迎回来，{{ this.user.UserName }}
+      </div>
+      <div class="text-xl mb-1">
+        你现在的排名是：{{ this.user.UserRank }}
+      </div>
+      <div class="text-xl mb-1">
+        {{ this.displayedMessages }}
+      </div>
     </div>
+    <!-- 排行榜 -->
+    <div class="mb-10 w-screen max-w-[screen]">
+      <div class="mt-20 flex mx-10">
+        <div class="m-auto max-w-full max-h-[90vh] overflow-scroll border-2 dark:border-zinc-700">
+          <RankTable />
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
