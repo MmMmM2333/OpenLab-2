@@ -17,7 +17,8 @@ export default {
     name: "App",
     created() {
         let token = localStorage.getItem("token");
-        if (token != "") {
+        if (token != "" && token != null && token != undefined) {
+            console.log(token);
             this.$store.commit("saveToken", token);
         }
     },

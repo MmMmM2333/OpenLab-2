@@ -125,6 +125,7 @@ export default {
             register_studentID: "",
             register_password: "",
             disableLoginButton: false,
+            timer: "",
         };
     },
     methods: {
@@ -134,6 +135,9 @@ export default {
         },
         forget_password() {
             this.$toast.error("该功能未上线...");
+        },
+        GoToHomePage() {
+            this.$router.push({ name: "Home" });
         },
         async login() {
             if (this.disableLoginButton) return;
@@ -157,8 +161,15 @@ export default {
             } else {
                 let token = result.data.data.token;
                 this.$store.commit("saveToken", token);
-                this.$toast.success("登录成功,3秒后跳转");
+                this.$toast.success("登录成功", {
+                    timeout: 1500,
+                });
                 this.disableLoginButton = true;
+                this.GoToHomePage();
+                // this.timer = setTimeout(() => {
+                //     //需要定时执行的代码
+                //     this.GoToHomePage();
+                // }, 3000);
             }
         },
         async register() {
@@ -185,6 +196,9 @@ export default {
             } else {
                 this.$toast.success("注册成功,可前往登录界面登录");
             }
+        },
+        beforeDestroy() {
+            clearTimeout(this.timer);
         },
     },
 };

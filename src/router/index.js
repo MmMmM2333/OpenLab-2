@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 
 import HomePage from '../components/HomePage.vue'
 import LoginPage from '../components/LoginPage.vue'
+import ProblemPage from '../components/ProblemPage.vue'
+import UserPage from '../components/UserPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -15,6 +18,16 @@ const routes = [
     path: '/Login',
     name: 'Login',
     component: LoginPage
+  },
+  {
+    path: '/Problem',
+    name: 'Problem',
+    component: ProblemPage
+  },
+  {
+    path: '/User',
+    name: 'User',
+    component: UserPage
   }
 ]
 

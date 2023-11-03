@@ -42,6 +42,7 @@ const store = new Vuex.Store({
   state: {
     token: '',
     username: '',
+    userID: '',
     roleID: 0,
     isLogin: false,
   },
@@ -51,6 +52,7 @@ const store = new Vuex.Store({
       state.token = token
       let decoded = jwtDecode(token);
       state.username = decoded.username
+      state.userID = decoded.userID
       state.roleID = decoded.roleID
       state.isLogin = true
       localStorage.setItem("token", token);
@@ -58,6 +60,7 @@ const store = new Vuex.Store({
     removeToken(state) {
       state.token = ''
       state.username = ''
+      state.userID = ''
       state.roleID = 0
       state.isLogin = false
       localStorage.removeItem("token");
