@@ -16,6 +16,7 @@
                 </div>
                 <div
                     v-if="this.$store.state.roleID == 1"
+                    @click="GoToManagePage"
                     class="w-24 h-full text-center flex justify-center flex-col cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
                 >
                     管理
@@ -23,6 +24,7 @@
             </div>
             <div class="flex">
                 <div
+                    @click="GoToUserPage"
                     v-if="this.$store.state.isLogin == true"
                     class="w-24 h-full text-center flex justify-center flex-col cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
                 >
@@ -67,6 +69,12 @@ export default {
         },
         GoToProblemPage() {
             this.$router.push({ name: "Problem" });
+        },
+        GoToUserPage() {
+            this.$router.push({ name: "User" });
+        },
+        GoToManagePage() {
+            this.$router.push({ name: "Manage" });
         },
         logout() {
             this.$store.commit("removeToken");

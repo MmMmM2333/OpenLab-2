@@ -5,6 +5,7 @@ import HomePage from '../components/HomePage.vue'
 import LoginPage from '../components/LoginPage.vue'
 import ProblemPage from '../components/ProblemPage.vue'
 import UserPage from '../components/UserPage.vue'
+import ManagePage from '../components/ManagePage.vue'
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,12 @@ const routes = [
     path: '/User',
     name: 'User',
     component: UserPage
+  }
+  ,
+  {
+    path: '/Manage',
+    name: 'Manage',
+    component: ManagePage
   }
 ]
 

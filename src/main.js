@@ -19,6 +19,12 @@ Vue.use(VueRouter)
 
 Vue.prototype.$http = axios
 axios.defaults.baseURL = 'http://localhost:3000';
+axios.interceptors.request.use(config => {
+  //为请求头对象，添加 Token 验证的 token 字段;
+  config.headers.Authorization = 'Bearer ' + localStorage.getItem('token');
+  return config;
+})
+
 
 const options = {
   position: "top-center",
