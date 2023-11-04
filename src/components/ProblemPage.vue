@@ -91,6 +91,15 @@ export default {
             }
         },
         async submitScore(problemID) {
+            if (this.score < 0) {
+                this.$toast.error("分数不能为负数");
+                return false;
+            }
+            if (this.score > this.result[this.showProblemIndex].score) {
+                this.$toast.error("分数不能超过题目分数");
+                return false;
+            }
+
             let result = await this.$http.get("/submitScore", {
                 params: {
                     problemID: problemID,

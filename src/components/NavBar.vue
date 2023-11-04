@@ -32,12 +32,12 @@
                 </div>
                 <div
                     v-if="this.$store.state.isLogin == true"
-                    class="w-24 h-full text-center flex relative justify-center flex-col cursor-pointer group/more hover:bg-gray-200 dark:hover:bg-gray-700 group"
+                    class="px-4 h-full text-center flex relative justify-center flex-col cursor-pointer group/more hover:bg-gray-200 dark:hover:bg-gray-700 group"
                 >
                     {{ this.$store.state.username }}
                     <div
                         @click="logout"
-                        class="invisible absolute top-16 w-24 h-10 leading-10 bg-white shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700 group-hover/more:visible"
+                        class="invisible absolute top-16 left-0 w-full h-10 leading-10 bg-white dark:bg-gray-800 shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700 group-hover/more:visible"
                     >
                         注销
                     </div>

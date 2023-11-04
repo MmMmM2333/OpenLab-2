@@ -194,7 +194,7 @@ export default {
     components: { NavBar, AddProblem, EditProblem },
     data() {
         return {
-            showEditProblemModel: true,
+            showEditProblemModel: false,
             EditProblemID: 0,
             showEditUserModel: true,
             EditUserID: 0,

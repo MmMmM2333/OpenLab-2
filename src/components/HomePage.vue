@@ -21,9 +21,14 @@
             class="mt-10 ml-10 select-none dark:text-white"
         >
             <div class="text-6xl mb-1">欢迎回来，{{ this.$store.state.username }}</div>
-            <div class="text-xl mb-1">你现在的排名是：{{ this.user.UserRank }}</div>
-            <div class="text-xl mb-1">
-                {{ this.displayedMessages }}
+            <div v-if="userRank > 0">
+                <div class="text-xl mb-1">你现在的排名是：{{ this.userRank }}</div>
+                <div class="text-xl mb-1">
+                    {{ this.displayedMessages }}
+                </div>
+            </div>
+            <div v-else-if="userRank == 0">
+                <div class="text-xl mb-1">看起来你还没有参加比赛,去试试做一道题吧</div>
             </div>
         </div>
 
@@ -45,7 +50,10 @@
                     登录以查看
                 </div>
                 <div class="m-auto max-w-full max-h-[90vh] overflow-scroll border-2 dark:border-zinc-700">
-                    <RankTable :class="[this.$store.state.isLogin == false ? 'blur select-none' : '']" />
+                    <RankTable
+                        @rank="getRank"
+                        :class="[this.$store.state.isLogin == false ? 'blur select-none' : '']"
+                    />
                 </div>
             </div>
         </div>
@@ -61,10 +69,7 @@ export default {
     data() {
         return {
             rankData: [],
-            user: {
-                UserName: "Huaji233",
-                UserRank: 5,
-            },
+            userRank: -1,
             encourageMsg: [
                 { rankRange: [1], messages: ["牛逼牛逼，加油保持！", "大佬牛逼！"] },
                 {
@@ -84,7 +89,8 @@ export default {
             this.$router.push({ name: "Login" });
         },
         randomEncourageMsg() {
-            let rank = this.user.UserRank;
+            let rank = this.userRank;
+            if (rank == -1) return;
             for (const msg of this.encourageMsg) {
                 if (msg.rankRange.includes(rank)) {
                     const randomIndex = Math.floor(Math.random() * msg.messages.length);
@@ -94,9 +100,12 @@ export default {
             }
             this.displayedMessages = "继续努力，你一定能取得更好的成绩！";
         },
+        async getRank(rank) {
+            this.userRank = rank;
+            this.randomEncourageMsg();
+            // console.log(rank);
+        },
     },
-    mounted() {
-        this.randomEncourageMsg();
-    },
+    mounted() {},
 };
 </script>

@@ -1,7 +1,10 @@
 <template>
-    <div>
+    <div class="dark:bg-gray-700 min-h-screen">
         <NavBar />
-        <div v-if="loaded" class="m-10 w-[400px] border-2 shadow-2xl rounded-xl p-4">
+        <div
+            v-if="loaded"
+            class="m-10 w-[400px] border-2 shadow-2xl rounded-xl p-4 dark:text-white dark:border-gray-800"
+        >
             <div>ID：{{ user.id }}</div>
             <div>用户名：{{ user.username }}</div>
             <div>学号：{{ user.studentID }}</div>
