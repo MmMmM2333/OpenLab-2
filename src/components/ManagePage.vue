@@ -29,7 +29,7 @@
                 <div class="w-full min-h-[160px] max-h-[80vh] overflow-y-scroll">
                     <div class="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] grid-flow-row gap-6 mx-10">
                         <div
-                            class="bg-blue-500 h-28 p-2 flex rounded-xl hover:opacity-90 cursor-pointer shadow-xl duration-500 relative group/item"
+                            class="bg-blue-500 text-white h-28 p-2 flex rounded-xl hover:opacity-90 cursor-pointer shadow-xl duration-500 relative group/item"
                             v-for="(user, index) in users"
                             :key="index"
                         >
