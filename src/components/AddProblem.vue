@@ -115,6 +115,7 @@ export default {
                 this.$toast.error(msg);
             } else {
                 this.$toast.success(msg);
+                this.$emit("refreshProblems");
             }
         },
     },
