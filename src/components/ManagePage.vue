@@ -1,10 +1,10 @@
 <template>
-    <div class="dark:text-white dark:border-gray-800 relative">
+    <div class="dark:text-white dark:bg-gray-700 relative">
         <NavBar />
-        <div class="m-10">
+        <div class="p-10">
             <div class="text-6xl mb-4">管理页面</div>
             <div class="text-3xl mb-2">添加题目</div>
-            <div class="min-w-[400px] max-w-[800px] border-2 shadow-2xl rounded-2xl p-4">
+            <div class="min-w-[400px] max-w-[800px] border-2 shadow-2xl rounded-2xl p-4 dark:border-gray-800">
                 <AddProblem @refreshProblems="getAllProblems" />
             </div>
             <div class="text-3xl my-8">编辑题目</div>
@@ -29,7 +29,7 @@
                 <div class="w-full min-h-[160px] max-h-[80vh] overflow-y-scroll">
                     <div class="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] grid-flow-row gap-6 mx-10">
                         <div
-                            class="bg-blue-300 h-28 p-2 flex rounded-xl hover:opacity-90 cursor-pointer shadow-xl duration-500 relative group/item"
+                            class="bg-blue-500 h-28 p-2 flex rounded-xl hover:opacity-90 cursor-pointer shadow-xl duration-500 relative group/item"
                             v-for="(user, index) in users"
                             :key="index"
                         >

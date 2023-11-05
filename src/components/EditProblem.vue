@@ -9,7 +9,7 @@
                     v-model="problem.miniTitle"
                     type="text"
                     placeholder="用于显示在排行榜上"
-                    class="flex-1 bg-gray-100 rounded-lg px-2"
+                    class="flex-1 bg-gray-100 rounded-lg px-2 dark:bg-gray-800"
                 />
             </div>
             <div class="flex mb-2 h-10">
@@ -18,7 +18,7 @@
                     v-model="problem.title"
                     type="text"
                     placeholder="用于显示在题目页上"
-                    class="flex-1 bg-gray-100 rounded-lg px-2"
+                    class="flex-1 bg-gray-100 rounded-lg px-2 dark:bg-gray-800"
                 />
             </div>
             <div class="flex mb-2">
@@ -26,7 +26,7 @@
                 <textarea
                     v-model="problem.description"
                     placeholder="选填"
-                    class="border-2 bg-gray-100 rounded-lg flex-1 max-h-40 min-h-[80px] p-2"
+                    class="border-2 bg-gray-100 rounded-lg flex-1 max-h-40 min-h-[80px] p-2 dark:bg-gray-800 dark:border-gray-800"
                 ></textarea>
             </div>
             <div class="flex h-10 mb-2">
@@ -35,7 +35,7 @@
                     v-model="problem.score"
                     type="number"
                     placeholder="用于显示在排行榜上"
-                    class="flex-1 bg-gray-100 rounded-lg px-2"
+                    class="flex-1 bg-gray-100 rounded-lg px-2 dark:bg-gray-800"
                 />
             </div>
             <div class="flex h-10">
