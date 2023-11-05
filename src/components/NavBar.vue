@@ -82,6 +82,7 @@ export default {
                 timeout: 1500,
             });
             console.log("注销");
+            this.GoToHomePage();
         },
     },
 };

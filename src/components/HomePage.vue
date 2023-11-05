@@ -26,6 +26,12 @@
                 <div class="text-xl mb-1">
                     {{ this.displayedMessages }}
                 </div>
+                <div
+                    @click="refreshRank"
+                    class="w-32 h-10 leading-10 rounded-xl text-center text-white bg-blue-500/100 hover:cursor-pointer hover:bg-blue-500/90 hover:scale-110 select-none ease-in duration-300"
+                >
+                    刷新排行榜
+                </div>
             </div>
             <div v-else-if="userRank == 0">
                 <div class="text-xl mb-1">看起来你还没有参加比赛,去试试做一道题吧</div>
@@ -51,6 +57,7 @@
                 </div>
                 <div class="m-auto max-w-full max-h-[90vh] overflow-scroll border-2 dark:border-zinc-700">
                     <RankTable
+                        ref="RankTable"
                         @rank="getRank"
                         :class="[this.$store.state.isLogin == false ? 'blur select-none' : '']"
                     />
@@ -99,6 +106,13 @@ export default {
                 }
             }
             this.displayedMessages = "继续努力，你一定能取得更好的成绩！";
+        },
+        async refreshRank() {
+            let resultCode = await this.$refs.RankTable.getRank();
+            // console.log(this.$refs.RankTable);
+            if (resultCode == 200) {
+                this.$toast.success("刷新排行榜成功");
+            }
         },
         async getRank(rank) {
             this.userRank = rank;

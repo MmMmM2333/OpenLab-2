@@ -157,6 +157,7 @@ export default {
             let msg = result.data.msg;
             if (code != 200) {
                 this.$toast.error(msg);
+                return code;
             } else {
                 this.problems = result.data.data.problems;
                 this.users = result.data.data.users;
@@ -169,6 +170,7 @@ export default {
                 } else {
                     this.$emit("rank", 0);
                 }
+                return code;
             }
         },
     },
