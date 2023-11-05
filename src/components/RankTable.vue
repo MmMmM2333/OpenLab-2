@@ -4,7 +4,7 @@
             <div v-if="showFakeData == false && showRank">
                 <div class="inline-flex gap-4 items-center sticky top-0 bg-zinc-200 select-none dark:bg-zinc-700">
                     <div class="w-16 text-center">排名</div>
-                    <div class="w-32 text-center">参赛人</div>
+                    <div class="w-40 text-center">参赛人</div>
                     <div class="w-16 text-center">分数</div>
                     <div class="w-20 text-center" v-for="(item, index) in problems" :key="index">
                         <div class="font-bold">{{ item.miniTitle }}</div>
@@ -15,9 +15,12 @@
                     <li v-for="(user, index) in users" :key="index">
                         <div class="inline-flex gap-4 border-b-2 bg-stone-50 dark:bg-gray-600 dark:border-gray-800">
                             <div class="w-16 h-12 text-center flex flex-col justify-center">{{ user.rank }}</div>
-                            <div class="w-32 h-12 text-right pr-2">
+                            <div class="w-40 h-12 text-right pr-4">
                                 <div class="font-bold">{{ user.studentID }}</div>
-                                <div :class="[user.username == $store.state.username ? 'text-blue-500' : '']">
+                                <div
+                                    :class="[user.username == $store.state.username ? 'text-blue-500' : '']"
+                                    class="text-ellipsis whitespace-nowrap overflow-hidden"
+                                >
                                     {{ user.username }}
                                 </div>
                             </div>
